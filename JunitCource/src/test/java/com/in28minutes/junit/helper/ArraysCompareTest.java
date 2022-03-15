@@ -17,4 +17,13 @@ public class ArraysCompareTest {
 		
 	}
 
+
+	@Test(expected = NullPointerException.class)
+	public void testArraySort_ExceptionTest() {
+		int[] numbers= null;
+		int[] expected={1,2,3,5,7};
+		Arrays.sort(numbers);
+	
+		
+	}
 }
