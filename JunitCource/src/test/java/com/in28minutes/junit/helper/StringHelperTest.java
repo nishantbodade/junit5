@@ -24,5 +24,11 @@ public class StringHelperTest {
 		assertEquals("CD", helper.truncateAInFirst2Positions("ACD"));
 		
 	}
+	
+	@Test
+	public void testAreFirstAndLastTwoCharactersTheSame() {
+		assertFalse(
+				helper.areFirstAndLastTwoCharactersTheSame("ABC"));
+	}
 
 }

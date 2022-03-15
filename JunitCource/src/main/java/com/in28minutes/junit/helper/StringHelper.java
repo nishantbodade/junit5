@@ -15,6 +15,9 @@ public class StringHelper {
 				+ stringMinusFirst2Chars;
 	}
 
+	
+	//FIRST AND LAST TWO CHARACTER SHOULD BE SAME
+	//AABC=>FALSE ABAB=>TRUE AABCGDAA=>TRUE ,A=>FALSE,AB=>TRUE
 	public boolean areFirstAndLastTwoCharactersTheSame(String str) {
 
 		if (str.length() <= 1)
