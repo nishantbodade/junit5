@@ -26,4 +26,17 @@ public class ArraysCompareTest {
 	
 		
 	}
+	
+
+	@Test(timeout = 1000)
+	public void testArraySort_Performance() {
+		int[] numbers= {2,5,7,3,1};
+	
+	for(int i=0;i<1000;i++) {
+		numbers[0]=i;
+		Arrays.sort(numbers);
+		
+	}
+		
+	}
 }
