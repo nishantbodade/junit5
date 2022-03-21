@@ -10,4 +10,10 @@ public class TodoServiceStub implements TodoService {
 		return Arrays.asList("Learn Spring MVC", "Learn Spring",
 				"Learn to Dance");
 	}
+
+	@Override
+	public void deleteToDo(String user) {
+		// TODO Auto-generated method stub
+		
+	}
 }
