@@ -1,6 +1,9 @@
 package com.in28minutes.business;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -27,5 +30,31 @@ public class TodoBusinessImplMockTest {
 		List<String> todos = todoBusinessImpl
 				.retrieveTodosRelatedToSpring("dummy");
 		assertEquals(2, todos.size());
+	}
+	
+	@Test
+	public void usingABDDMock() {
+		
+		//given
+		TodoService todoServiceMock =mock(TodoService.class);
+		
+		List<String> todo=Arrays.asList("Learn Spring MVC", "Learn Spring",
+					"Learn to Dance");
+		
+		given(todoServiceMock.retrieveTodos("dummy")).willReturn(todo);//syntax change for BDD
+		
+		TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
+		
+		//when
+		List<String> todos = todoBusinessImpl
+				.retrieveTodosRelatedToSpring("dummy");
+		
+		//then
+		
+		assertThat( todos.size(),is(2));//more readable in BDD
+		
+		
+		
+		
 	}
 }
